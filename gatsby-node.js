@@ -11,7 +11,7 @@ exports.createPages = async function({ actions, graphql }) {
     }
      
     `)
-    data.allDatoCmsPageModular.edges.forEach(edge => {
+    data.allDatoCmsPage.edges.forEach(edge => {
       actions.createPage({
         path: edge.node.slug,
         component: require.resolve(`./src/templates/page.js`),
