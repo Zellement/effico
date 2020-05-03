@@ -20,10 +20,16 @@ const Nav = class extends React.Component {
       <div className={`navigation-wrapper navigation-wrapper--${menuActive}`} >
         <ul className="md:bg-red md:flex md:w-full md:flex-row md:justify-start md:items-stretch">
           <li>
-            <Link className="navigation-wrapper__link" onClick={this.toggleMenu} activeClassName="is-active" to="/">Home</Link>
+            <Link className="navigation-wrapper__link" onClick={this.toggleMenu} activeClassName="is-active" to="/domestic-electrical-services">Domestic Electrical Services</Link>
           </li>
           <li>
-            <Link className="navigation-wrapper__link" onClick={this.toggleMenu} activeClassName="is-active" to="/about">About</Link>
+            <Link className="navigation-wrapper__link" onClick={this.toggleMenu} activeClassName="is-active" to="/electrical-services">Commercial Electrical Services</Link>
+          </li>
+          <li>
+            <Link className="navigation-wrapper__link" onClick={this.toggleMenu} activeClassName="is-active" to="/telecommunications-utilities">Telecommunications &amp; Utilities</Link>
+          </li>
+          <li>
+            <Link className="navigation-wrapper__link" onClick={this.toggleMenu} activeClassName="is-active" to="/led-lights-ev-chargers">LED Lights &amp; EV Chargers</Link>
           </li>
           <li>
             <a target="_blank" rel="noreferrer noopener" onClick={this.toggleMenu} className="navigation-wrapper__link" href="https://github.com/samuelgoddard/gatsby-tailwind-motion/">Github <GoLinkExternal className="inline-block opacity-25 -mt-3px" /></a>
