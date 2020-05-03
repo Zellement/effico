@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 module.exports = {
   siteMetadata: {
     title: `Gatsby x Tailwind x Framer Motion`,
@@ -21,6 +23,12 @@ module.exports = {
         tailwind: true, 
         whitelistPatterns: [/is-active/],
       }
+    },
+    {
+      resolve: `gatsby-source-datocms`,
+      options: {
+        apiToken: process.env.DATO_API_KEY,
+      },
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
