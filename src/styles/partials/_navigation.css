@@ -82,7 +82,7 @@ Navigation
 
 .navigation-button.is-active {
 	@apply
-		bg-blue-300;
+		bg-orange-300;
 }
 
 .navigation-button.is-active .navigation-button__line-1 {
