@@ -13,6 +13,7 @@
 @import './partials/_typography.css';
 @import './partials/_navigation.css';
 @import './partials/_gradients.css';
+@import './partials/_embla-carousel.css';
 
 /* Tailwind Utils */
 @import 'tailwindcss/utilities';

@@ -6,6 +6,7 @@ import { motion } from "framer-motion"
 import SEO from "../components/seo"
 import Hero from "../components/hero"
 import WhyChooseEffico from "../components/why-choose-effico"
+import GalleryCarousel from "../components/gallery-carousel"
 import { HTMLContent } from "../components/content"
 
 const duration = 0.35
@@ -76,6 +77,12 @@ const ServicePage = ({ data }) => {
             transition="easeInOut"
             className="w-full mt-4 lg:w-6/12 lg:-mt-4 lg:-ml-20"
           >
+
+            <div className="mb-4 bg-gray-200 border-white border-solid shadow-lg border-10">
+              <GalleryCarousel
+                images={post.gallery}
+              />
+            </div>
             
             <div className="bg-gray-200 shadow-lg">
               <WhyChooseEffico />
@@ -109,8 +116,8 @@ export const query = graphql`
       content
       gallery {
         url
-        fixed {
-          ...GatsbyDatoCmsFixed
+        fluid(imgixParams: {w: "800", h: "520", fit: "crop", crop: "edges"}) {
+          ...GatsbyDatoCmsFluid
         }
       }
     }
