@@ -49,8 +49,12 @@ Navigation
   }
 }
 
+.navigation-wrapper__list-item {
+  @apply relative;
+}
+
 .navigation-wrapper__link {
-  @apply block px-1 py-1 text-black;
+  @apply block px-1 py-1 text-black transition duration-300;
   @screen md {
     @apply text-sm;
   }
@@ -59,5 +63,15 @@ Navigation
   }
   @screen xl {
     @apply px-6;
+  }
+  &:hover {
+    @apply transform -translate-y-2;
+  }
+}
+
+.navigation-wrapper__link.is-active {
+  &:after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-full h-px -mb-2 bg-green;
   }
 }

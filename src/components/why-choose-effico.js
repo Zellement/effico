@@ -26,8 +26,8 @@ const WhyChooseEffico = () => {
           <div className="m-auto">
             <h2>{data.datoCmsOption.quoteTitle}</h2>
             <div className="flex">
-              <div>
-                <GoQuote className="pr-2 text-4xl text-gray-400" />
+              <div className="hidden sm:block">
+                <GoQuote className="pr-2 text-gray-400 md:text-4xl" />
               </div>
               <p className="font-display">{data.datoCmsOption.quote}</p>
             </div>

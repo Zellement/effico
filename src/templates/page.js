@@ -75,7 +75,7 @@ const ServicePage = ({ data }) => {
           <motion.div
             variants={item}
             transition="easeInOut"
-            className="w-full mt-4 lg:w-6/12 lg:-mt-4 lg:-ml-20"
+            className="w-full mt-4 lg:w-8/12 lg:-mt-4 lg:-ml-20"
           >
 
             <div className="mb-4 bg-gray-200 border-white border-solid shadow-lg border-10">

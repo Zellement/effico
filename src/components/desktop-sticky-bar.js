@@ -8,8 +8,8 @@ const DesktopStickyBar = () => (
     <div className="container text-white md:flex md:flex-row md:justify-end">
 
     <span className="inline-block my-auto mr-4">Contact us today on</span>
-    <PhoneNumber className="inline-block p-2 mr-4 text-center text-white" />
-    <Email className="inline-block p-2 mr-4 text-center text-white" />
+    <PhoneNumber className="inline-block p-2 mr-4 text-center text-white hover:text-green-light" />
+    <Email className="inline-block p-2 mr-4 text-center text-white hover:text-green-light" />
     <div className="flex flex-row justify-center w-auto py-2">
       <ReactCountryFlag
         countryCode="GB"
