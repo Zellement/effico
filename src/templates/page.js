@@ -60,16 +60,16 @@ const ServicePage = ({ data }) => {
         <motion.div
           variants={item}
           transition="easeInOut"
-          className="container flex flex-col md:flex-row"
+          className="container flex flex-col lg:flex-row"
         >
 
-          <div className="w-full p-8 -mt-8 bg-gray-100 shadow-lg md:w-9/12 content md:pr-16 lg:p-16 lg:pr-20">
+          <div className="w-full p-8 -mt-8 bg-gray-100 shadow-lg lg:w-10/12 content md:p-16 lg:pr-32">
 
             <HTMLContent content={post.content} />
 
           </div>
 
-          <div className="w-full mt-4 md:w-6/12 md:-mt-4 md:-ml-8">
+          <div className="w-full mt-4 lg:w-6/12 lg:-mt-4 lg:-ml-20">
 
             <div className="bg-gray-200 shadow-lg">
 
