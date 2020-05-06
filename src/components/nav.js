@@ -16,7 +16,7 @@ const Nav = class extends React.Component {
  
   render() {
     const menuActive = this.state.showMenu ? 'is-active' : '';
-    const burgerActive = this.state.showMenu ? 'is-active' : '';
+    // const burgerActive = this.state.showMenu ? 'is-active' : '';
     return (     
     <nav className="w-3/12 md:w-full lg:flex lg:content-end lg:justify-end lg:flex-col">
       <div className={`lg:mt-5 navigation-wrapper navigation-wrapper--${menuActive}`} >

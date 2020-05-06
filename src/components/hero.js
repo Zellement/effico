@@ -12,7 +12,7 @@ const item = {
 
 const Hero = ({ heroMajor, heroMinor, heroIntro, heroImage }) => (
   <>
-    <div className="absolute top-0 right-0 bottom-0 left-0 -z-20">
+    <div className="absolute top-0 bottom-0 left-0 right-0 -z-20">
       
       <Img
         fluid={heroImage}
@@ -24,18 +24,18 @@ const Hero = ({ heroMajor, heroMinor, heroIntro, heroImage }) => (
       />
     </div>
 
-    <div className="absolute top-0 right-0 bottom-0 left-0 -z-10 w-full h-full bg-gradient-b-green-green-dark opacity-75"></div>
+    <div className="absolute top-0 bottom-0 left-0 right-0 w-full h-full opacity-75 -z-10 bg-gradient-b-green-green-dark"></div>
 
     <motion.div
       variants={item}
       transition="easeInOut"
-      className="container p-8 lg:py-16 text-white text-center pb-16"
+      className="container p-8 pb-16 text-center text-white lg:py-16"
     >
-      <span className="block text-xl md:text-2xl xl:text-4xl">{heroMinor}</span>
-      <span className="block font-bold text-3xl leading-tight text-5xl xl:text-6xl">
+      <span className="block text-lg md:text-2xl lg:text-3xl xl:text-4xl">{heroMinor}</span>
+      <span className="block text-3xl font-bold leading-tight sm:text-3xl lg:text-5xl xl:text-6xl">
         {heroMajor}
       </span>
-      <p className="my-4 block text-base font-display md:text-xl max-w-xl mx-auto lg:text-2xl xl:max-w-2xl">
+      <p className="block max-w-xl mx-auto my-4 text-base font-display md:text-lg lg:text-xl xl:max-w-2xl">
         "{heroIntro}"
       </p>
     </motion.div>
