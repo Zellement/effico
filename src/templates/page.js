@@ -1,9 +1,12 @@
 import React from "react"
 import { graphql } from "gatsby"
 import { motion } from 'framer-motion'
-import Img from 'gatsby-image'
+// import Img from 'gatsby-image'
 
 import SEO from "../components/seo"
+import Hero from "../components/hero"
+import WhyChooseEffico from "../components/why-choose-effico"
+import { HTMLContent } from "../components/content"
 
 const duration = 0.35
 
@@ -40,34 +43,10 @@ const ServicePage = ({ data }) => {
         variants={container}
         initial="hidden"
         animate="visible"
-        className="w-full relative"
+        className="relative w-full"
       >
 
-        <div className="absolute top-0 right-0 bottom-0 left-0 -z-20">
-          <Img
-            fluid={post.heroImage.fluid}
-            className='w-full h-full'
-            imgStyle={{
-              objectFit: "cover",
-              objectPostion: 'center'
-            }}
-          />
-        </div>
-
-        <div className="absolute top-0 right-0 bottom-0 left-0 -z-10 w-full h-full bg-gradient-b-green-green-dark opacity-75"></div>
-
-        <motion.div
-          variants={item}
-          transition="easeInOut"
-          className="container p-8 text-white text-center"
-        >
-
-          <span className="block text-xl">{post.heroMinor}</span>
-          <span className="block text-2xl">{post.heroMajor}</span>
-          <p className="block text-base font-display">{post.heroIntro}</p>
-
-
-        </motion.div>
+        <Hero heroMajor={post.heroMajor} heroMinor={post.heroMinor} heroIntro={post.heroIntro} heroImage={post.heroImage.fluid} />
 
       </motion.section>
 
@@ -75,13 +54,30 @@ const ServicePage = ({ data }) => {
         variants={container}
         initial="hidden"
         animate="visible"
+        className=""
       >
 
         <motion.div
           variants={item}
           transition="easeInOut"
-          className="my-4 lg:my-8"
+          className="container flex flex-col md:flex-row"
         >
+
+          <div className="w-full p-8 -mt-8 bg-gray-100 shadow-lg md:w-9/12 content md:pr-16 lg:p-16 lg:pr-20">
+
+            <HTMLContent content={post.content} />
+
+          </div>
+
+          <div className="w-full mt-4 md:w-6/12 md:-mt-4 md:-ml-8">
+
+            <div className="bg-gray-200 shadow-lg">
+
+              <WhyChooseEffico />
+
+            </div>
+
+          </div>
 
 
         </motion.div>

@@ -22,7 +22,7 @@ const Nav = class extends React.Component {
             <Link className="navigation-wrapper__link" onClick={this.toggleMenu} activeClassName="is-active" to="/domestic-electrical-services">Domestic Electrical Services</Link>
           </li>
           <li>
-            <Link className="navigation-wrapper__link" onClick={this.toggleMenu} activeClassName="is-active" to="/electrical-services">Commercial Electrical Services</Link>
+            <Link className="navigation-wrapper__link" onClick={this.toggleMenu} activeClassName="is-active" to="/commercial-electrical-services">Commercial Electrical Services</Link>
           </li>
           <li>
             <Link className="navigation-wrapper__link" onClick={this.toggleMenu} activeClassName="is-active" to="/telecommunications-utilities">Telecommunications &amp; Utilities</Link>

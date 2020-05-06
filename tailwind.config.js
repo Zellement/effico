@@ -1,6 +1,12 @@
 module.exports = {
   theme: {
     extend: {
+      screens: {
+      '2xl': '1500px'
+      },
+      borderWidth: {
+        '10': '10px'
+      },
       fontFamily: {
         sans: [
           'Roboto',
