@@ -4,6 +4,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import { motion, AnimatePresence } from 'framer-motion'
 
 import Header from "./header"
+import MobileStickyBar from "./mobile-sticky-bar"
 import "../styles/main.css"
 
 const duration = 0.35
@@ -42,6 +43,7 @@ const Layout = ({ children, location }) => {
   return (
     <>
       <Header siteTitle={data.site.siteMetadata.title} />
+      <MobileStickyBar />
       <AnimatePresence>
         <motion.main
           key={location.pathname}

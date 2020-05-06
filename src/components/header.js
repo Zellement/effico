@@ -1,15 +1,12 @@
 import React from "react"
-import Nav from '../components/nav'
 import Logo from '../components/atoms/logo'
 
 const Header = () => (
-  <header className="">
+  <header>
 
     <div className="flex p-4">
       <Logo className="block w-40 mx-auto" />
     </div>
-
-    <Nav />
 
   </header>
 )

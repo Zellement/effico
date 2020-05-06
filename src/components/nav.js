@@ -40,6 +40,7 @@ const Nav = class extends React.Component {
       </div>
       <div className={`${burgerActive} navigation-button`} onClick={this.toggleMenu}>
         <div className={`navigation-button__inside ${burgerActive}`}>
+          <span className="block text-white">Menu</span>
           <span className="left-0 navigation-button__lines navigation-button__line-1"></span>
           <span className="left-0 mt-2 navigation-button__lines navigation-button__line-2"></span>
           <span className="left-0 mt-4 navigation-button__lines navigation-button__line-3"></span>
