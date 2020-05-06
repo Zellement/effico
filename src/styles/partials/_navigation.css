@@ -3,96 +3,61 @@ Navigation
 -------------------------- */
 
 .navigation-wrapper {
-	@apply
-		fixed top-0 left-0 z-10 w-full h-screen p-6 transition-all duration-100 ease-in bg-white;
+  @apply fixed top-0 left-0 z-10 w-full h-screen p-6 transition-all duration-100 ease-in bg-white;
 
-		transform: translateX(-200%);
-
-		@screen md {
-			@apply
-				static top-auto left-auto block w-full h-auto p-0 bg-transparent;
-
-  				transform: translateX(0);
-		}
-}
-
-.navigation-wrapper--is-active {
-	@apply
-		block;
-		transform: translateX(0);
-}
-
-.navigation-button {
-	padding: 15px;
-  	@apply
-  		block w-12 h-12 bg-black cursor-pointer;
-
-	@screen md {
-		@apply hidden;
-	}
-}
-
-.navigation-button__inside {
-	@apply
-		relative z-50 w-full h-full;
-}
-
-.navigation-button__lines {
-	@apply
-		absolute top-0 block w-1/2 transition-all duration-100 ease-in bg-white opacity-100;
-	height: 2px;
-}
-
-.navigation-button.is-active {
-	@apply
-		bg-orange-300;
-}
-
-.navigation-button.is-active .navigation-button__line-1 {
-	@apply
-	left-0 transition-all duration-100 ease-in transform rotate-45;
-	margin-top: 2px;
-}
-
-.navigation-button.is-active .navigation-button__line-2 {
-	@apply
-	left-0 transition-all duration-100 ease-in transform -rotate-45;
-	margin-top: 10px;
-}
-
-.navigation-button.is-active .navigation-button__line-3 {
-	@apply
-		left-0 hidden mt-4;
-}
-
-.navigation-button.is-active .navigation-button__line-4 {
-	@apply
-		right-0 hidden;
-}
-
-.navigation-button.is-active .navigation-button__line-5 {
-	@apply
-	right-0 transition-all duration-100 ease-in transform -rotate-45;
-	margin-top: 2px;
-}
-
-.navigation-button.is-active .navigation-button__line-6 {
-	@apply
-	right-0 transition-all duration-100 ease-in transform rotate-45;
-	margin-top: 10px;
-}
-
-.navigation-wrapper__list-item  {
-  margin: 3px 0;
+  transform: translateX(-200%);
 
   @screen md {
-    @apply
-    	inline-block mx-1;
+    @apply static top-auto left-auto block w-full h-auto p-0 bg-transparent;
+
+    transform: translateX(0);
   }
 }
 
-.navigation-wrapper__link  {
-  @apply
-  	block px-1 py-1 text-black;
+.navigation-wrapper--is-active {
+  @apply block;
+  transform: translateX(0);
+}
 
+.navigation-button {
+  padding: 15px;
+  @apply block w-12 h-12 bg-black cursor-pointer;
+
+  @screen md {
+    @apply hidden;
+  }
+}
+
+.navigation-button__inside {
+  @apply relative z-50 w-full h-full;
+}
+
+.navigation-button__lines {
+  @apply absolute top-0 block w-1/2 transition-all duration-100 ease-in bg-white opacity-100;
+  height: 2px;
+}
+
+.navigation-button.is-active {
+  @apply bg-orange-300;
+}
+
+.navigation-wrapper__list-item {
+  margin: 3px 0;
+
+  @screen md {
+    @apply inline-block mx-1;
+  }
+}
+
+.navigation-wrapper__link {
+  @apply block px-1 py-1 text-black;
+  @screen md {
+    @apply text-sm;
+  }
+  @screen lg {
+    @apply px-2 text-base;
+  }
+  @screen xl {
+    @apply px-6;
+  }
 }

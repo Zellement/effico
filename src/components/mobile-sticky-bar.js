@@ -4,7 +4,7 @@ import PhoneNumber from "../components/atoms/phone-number"
 import ReactCountryFlag from "react-country-flag"
 
 const MobileStickyBar = () => (
-  <div className="fixed bottom-0 left-0 right-0 z-50 flex flex-row justify-between bg-gray-700">
+  <div className="fixed bottom-0 left-0 right-0 z-50 flex flex-row justify-between bg-gray-700 md:hidden">
     <div className="flex flex-row justify-center w-auto px-6 py-2">
       <ReactCountryFlag
         countryCode="GB"

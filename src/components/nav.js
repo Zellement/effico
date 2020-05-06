@@ -18,31 +18,31 @@ const Nav = class extends React.Component {
     const menuActive = this.state.showMenu ? 'is-active' : '';
     const burgerActive = this.state.showMenu ? 'is-active' : '';
     return (     
-    <nav className="w-3/12 lg:flex lg:content-end lg:justify-end lg:flex-col">
-      <div className={`navigation-wrapper navigation-wrapper--${menuActive}`} >
-        <ul className="md:bg-red md:flex md:w-full md:flex-row md:justify-start md:items-stretch">
+    <nav className="w-3/12 md:w-full lg:flex lg:content-end lg:justify-end lg:flex-col">
+      <div className={`lg:mt-5 navigation-wrapper navigation-wrapper--${menuActive}`} >
+        <ul className="md:bg-red md:flex md:w-full md:flex-row md:justify-start md:items-stretch lg:justify-end">
           <li>
-            <Link className="navigation-wrapper__link" onClick={this.toggleMenu} activeClassName="is-active" to="/domestic-electrical-services">Domestic Electrical Services</Link>
+            <Link className="navigation-wrapper__link" onClick={this.toggleMenu} activeClassName="is-active" to="/domestic-electrical-services"><span className="lg:block">Domestic</span> Electrical Services</Link>
           </li>
           <li>
-            <Link className="navigation-wrapper__link" onClick={this.toggleMenu} activeClassName="is-active" to="/commercial-electrical-services">Commercial Electrical Services</Link>
+            <Link className="navigation-wrapper__link" onClick={this.toggleMenu} activeClassName="is-active" to="/commercial-electrical-services"><span className="lg:block">Commercial</span> Electrical Services</Link>
           </li>
           <li>
-            <Link className="navigation-wrapper__link" onClick={this.toggleMenu} activeClassName="is-active" to="/telecommunications-utilities">Telecommunications &amp; Utilities</Link>
+            <Link className="navigation-wrapper__link" onClick={this.toggleMenu} activeClassName="is-active" to="/telecommunications-utilities"><span className="lg:block">Telecommunications</span> &amp; Utilities</Link>
           </li>
           <li>
-            <Link className="navigation-wrapper__link" onClick={this.toggleMenu} activeClassName="is-active" to="/led-lights-ev-chargers">LED Lights &amp; EV Chargers</Link>
+            <Link className="navigation-wrapper__link" onClick={this.toggleMenu} activeClassName="is-active" to="/led-lights-ev-chargers"><span className="lg:block">LED Lights &amp;</span> EV Chargers</Link>
           </li>
           <li>
-            <Link className="navigation-wrapper__link" onClick={this.toggleMenu} activeClassName="is-active" to="/recent-projects">Recent Projects</Link>
+            <Link className="navigation-wrapper__link" onClick={this.toggleMenu} activeClassName="is-active" to="/recent-projects"><span className="lg:block">Recent</span> Projects</Link>
           </li>
           <li>
             <Link className="navigation-wrapper__link" onClick={this.toggleMenu} activeClassName="is-active" to="/contact-us">Contact Us</Link>
           </li>
         </ul>
       </div>
-      <div className="block text-center" onClick={this.toggleMenu}>
-          <span className="block p-2 text-center text-white"><GiHamburgerMenu className="inline-block -mt-px" /> Menu</span>
+      <div className="block p-2 text-center text-white md:hidden" onClick={this.toggleMenu}>
+        <GiHamburgerMenu className="inline-block -mt-px" /> Menu
       </div>
     </nav>
   )}
