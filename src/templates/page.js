@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import { motion } from 'framer-motion'
+import { motion } from "framer-motion"
 // import Img from 'gatsby-image'
 
 import SEO from "../components/seo"
@@ -13,7 +13,7 @@ const duration = 0.35
 const container = {
   visible: {
     transition: {
-      when: 'beforeChildren',
+      when: "beforeChildren",
       staggerChildren: 0.2,
       delayChildren: duration,
     },
@@ -28,27 +28,11 @@ const item = {
 }
 
 const ServicePage = ({ data }) => {
-
   const post = data.datoCmsPage
 
   return (
     <>
-
-      <SEO
-        title={post.seo.title}
-        description={post.seo.description}
-      />
-
-      <motion.section
-        variants={container}
-        initial="hidden"
-        animate="visible"
-        className="relative w-full"
-      >
-
-        <Hero heroMajor={post.heroMajor} heroMinor={post.heroMinor} heroIntro={post.heroIntro} heroImage={post.heroImage.fluid} />
-
-      </motion.section>
+      <SEO title={post.seo.title} description={post.seo.description} />
 
       <motion.section
         variants={container}
@@ -56,32 +40,49 @@ const ServicePage = ({ data }) => {
         animate="visible"
         className=""
       >
+        <motion.div
+          variants={item}
+          transition="easeInOut"
+          className="relative w-full"
+        >
+          
+          <Hero
+            heroMajor={post.heroMajor}
+            heroMinor={post.heroMinor}
+            heroIntro={post.heroIntro}
+            heroImage={post.heroImage.fluid}
+          />
+
+        </motion.div>
 
         <motion.div
           variants={item}
           transition="easeInOut"
           className="container flex flex-col lg:flex-row"
         >
-
-          <div className="w-full p-8 -mt-8 bg-gray-100 shadow-lg lg:w-10/12 content md:p-16 lg:pr-32">
-
+          
+          <motion.div
+            variants={item}
+            transition="easeInOut"
+            className="w-full p-8 -mt-8 bg-gray-100 shadow-lg lg:w-10/12 content md:p-16 lg:pr-32"
+          >
+            
             <HTMLContent content={post.content} />
+            
+          </motion.div>
 
-          </div>
-
-          <div className="w-full mt-4 lg:w-6/12 lg:-mt-4 lg:-ml-20">
-
+          <motion.div
+            variants={item}
+            transition="easeInOut"
+            className="w-full mt-4 lg:w-6/12 lg:-mt-4 lg:-ml-20"
+          >
+            
             <div className="bg-gray-200 shadow-lg">
-
               <WhyChooseEffico />
-
             </div>
-
-          </div>
-
-
+            
+          </motion.div>
         </motion.div>
-
       </motion.section>
     </>
   )
@@ -91,7 +92,7 @@ export default ServicePage
 
 export const query = graphql`
   query($slug: String!) {
-    datoCmsPage(slug: {eq: $slug})  {
+    datoCmsPage(slug: { eq: $slug }) {
       seo {
         title
         description
@@ -114,5 +115,4 @@ export const query = graphql`
       }
     }
   }
-  
 `
