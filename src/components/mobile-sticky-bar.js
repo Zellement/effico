@@ -1,11 +1,33 @@
 import React from "react"
-import Nav from '../components/nav'
+import Nav from "../components/nav"
+import PhoneNumber from "../components/atoms/phone-number"
+import ReactCountryFlag from "react-country-flag"
 
 const MobileStickyBar = () => (
-  <div className="fixed bottom-0 left-0 right-0 z-50">
+  <div className="fixed bottom-0 left-0 right-0 z-50 flex flex-row justify-between bg-gray-700">
+    <div className="flex flex-row justify-center w-auto px-6 py-2">
+      <ReactCountryFlag
+        countryCode="GB"
+        style={{
+          fontSize: "1.4em",
+          lineHeight: "2em",
+          marginRight: '2px'
+        }}
+        svg
+      />
+      <ReactCountryFlag
+        countryCode="PL"
+        style={{
+          fontSize: "1.4em",
+          lineHeight: "2em",
+        }}
+        svg
+      />
+    </div>
+
+    <PhoneNumber className="flex-grow inline-block w-6/12 p-2 text-center text-white bg-green" />
 
     <Nav />
-
   </div>
 )
 
