@@ -8,13 +8,27 @@ exports.createPages = async function({ actions, graphql }) {
           }
         }
       }
+      allDatoCmsRecentProject {
+        edges {
+          node {
+            slug
+          }
+        }
+      }
     }
      
     `)
     data.allDatoCmsPage.edges.forEach(edge => {
       actions.createPage({
-        path: edge.node.slug,
+        path: edge.node.slug + '/',
         component: require.resolve(`./src/templates/page.js`),
+        context: { slug: edge.node.slug },
+      })
+    })
+    data.allDatoCmsRecentProject.edges.forEach(edge => {
+      actions.createPage({
+        path: '/recent-projects/' + edge.node.slug + '/',
+        component: require.resolve(`./src/templates/project.js`),
         context: { slug: edge.node.slug },
       })
     })

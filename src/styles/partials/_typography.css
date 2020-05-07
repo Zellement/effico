@@ -46,7 +46,8 @@ h2 {
     @apply mb-6;
   }
 
-  p:first-of-type {
+  h1 > p,
+  h2 > p {
     @apply text-lg;
   }
 
