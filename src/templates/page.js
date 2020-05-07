@@ -91,7 +91,7 @@ const ServicePage = ({ data }) => {
         <motion.div
           variants={item}
           transition="easeInOut"
-          className="container flex flex-col mt-8 lg:flex-row"
+          className="container flex flex-col mt-12 lg:flex-row"
         >
           <div className="flex flex-row flex-wrap w-full p-8 border-gray-200 border-solid shadow-lg border-10">
             <div className="flex flex-row flex-wrap justify-center w-full lg:w-1/2 lg:pr-8">
@@ -110,7 +110,7 @@ const ServicePage = ({ data }) => {
         <motion.div
           variants={item}
           transition="easeInOut"
-          className="container flex flex-col mt-8 lg:flex-row"
+          className="container flex flex-col mt-12 lg:flex-row"
         >
           <div className="flex flex-col w-full p-8 text-white shadow-lg bg-gradient-b-green-green-dark lg:flex-row lg:flex-wrap lg:px-16">
             <h2 className="w-full text-xl text-white sm:text-2xl lg:text-center">Start your enquiry today...</h2>
