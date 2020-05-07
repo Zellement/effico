@@ -1,12 +1,17 @@
-body, html {
-	/* Force vertical scroll bar, prevent shifting content */
-	min-height: 101%;
+body,
+html {
+  /* Force vertical scroll bar, prevent shifting content */
+  min-height: 101%;
+  @apply pb-8;
+  @screen md {
+    @apply pb-4;
+  }
 }
 
 a {
-	@apply transition duration-300;
+  @apply transition duration-300;
 }
 
-[class*='transition'] {
-	@apply duration-300;
+[class*="transition"] {
+  @apply duration-300;
 }

@@ -5,7 +5,7 @@ const container = {
   visible: {
     transition: {
       when: "beforeChildren",
-      staggerChildren: 0.5,
+      staggerChildren: 0.4,
       delayChildren: 0.2,
     },
   },

@@ -5,9 +5,11 @@ import { motion } from "framer-motion"
 
 import SEO from "../components/seo"
 import Hero from "../components/hero"
+import { HTMLContent } from "../components/content"
 import WhyChooseEffico from "../components/why-choose-effico"
 import GalleryCarousel from "../components/gallery-carousel"
-import { HTMLContent } from "../components/content"
+import ProudToHaveWorkedWith from "../components/proud-to-have-worked-with"
+import Accreditations from "../components/accreditations"
 
 const duration = 0.35
 
@@ -46,14 +48,12 @@ const ServicePage = ({ data }) => {
           transition="easeInOut"
           className="relative w-full"
         >
-          
           <Hero
             heroMajor={post.heroMajor}
             heroMinor={post.heroMinor}
             heroIntro={post.heroIntro}
             heroImage={post.heroImage.fluid}
           />
-
         </motion.div>
 
         <motion.div
@@ -61,15 +61,12 @@ const ServicePage = ({ data }) => {
           transition="easeInOut"
           className="container flex flex-col lg:flex-row"
         >
-          
           <motion.div
             variants={item}
             transition="easeInOut"
             className="w-full p-8 -mt-8 bg-gray-100 shadow-lg lg:w-10/12 content md:p-16 lg:pr-32"
           >
-            
             <HTMLContent content={post.content} />
-            
           </motion.div>
 
           <motion.div
@@ -77,18 +74,31 @@ const ServicePage = ({ data }) => {
             transition="easeInOut"
             className="w-full mt-4 lg:w-8/12 lg:-mt-4 lg:-ml-20"
           >
-
             <div className="mb-4 bg-gray-200 border-white border-solid shadow-lg border-10">
-              <GalleryCarousel
-                images={post.gallery}
-              />
+              <GalleryCarousel images={post.gallery} />
             </div>
-            
+
             <div className="bg-gray-200 shadow-lg">
               <WhyChooseEffico />
             </div>
-            
           </motion.div>
+        </motion.div>
+
+        <motion.div
+          variants={item}
+          transition="easeInOut"
+          className="container flex flex-col mt-8 lg:flex-row"
+        >
+          <div className="flex flex-row flex-wrap w-full p-8 border-gray-200 border-solid shadow-lg border-10">
+            <div className="flex flex-row flex-wrap justify-center w-full lg:w-1/2 lg:pr-8">
+              <h2 className="w-full text-gray-600">Proud to have worked with...</h2>
+              <ProudToHaveWorkedWith className="w-1/2 p-2 my-auto sm:w-1/4 md:flex-1 md:w-full" />
+            </div>
+            <div className="flex flex-row flex-wrap justify-center w-full mt-8 lg:w-1/2 lg:pl-8 lg:m-0">
+              <h2 className="w-full text-gray-600">Accreditations</h2>
+              <Accreditations className="w-1/2 p-2 my-auto sm:w-1/4 md:flex-1 md:w-full" />
+            </div>
+          </div>
         </motion.div>
       </motion.section>
     </>
@@ -116,7 +126,7 @@ export const query = graphql`
       content
       gallery {
         url
-        fluid(imgixParams: {w: "800", h: "520", fit: "crop", crop: "edges"}) {
+        fluid(imgixParams: { w: "800", h: "520", fit: "crop", crop: "edges" }) {
           ...GatsbyDatoCmsFluid
         }
       }
