@@ -15,6 +15,9 @@ module.exports = {
           'Roboto Slab'
         ],
       },
+      maxWidth: {
+        '100': '100px'
+      },
       colors: {
         green: {
           light: '#4abf48',
