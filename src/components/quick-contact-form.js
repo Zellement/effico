@@ -18,7 +18,7 @@ export default class Contact extends React.Component {
     }
     this.validator = new SimpleReactValidator({
       className:
-        "absolute z-20 top-0 right-0 text-5xl w-32 h-32 bg-red-800 leading-none -mt-1 -mr-1 text-yellow-light p-1 px-2",
+        "absolute z-20 top-0 right-0 text-2xl text-white bg-red-800 leading-none -mt-1 -mr-1 p-1 px-2",
       messages: {
         default: "*",
       },
