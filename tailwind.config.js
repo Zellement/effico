@@ -42,12 +42,14 @@ module.exports = {
       },
       linearGradientColors: {
         'green-green-dark': ['#387B37', '#1B301B'],
+        'blue-blue-dark': ['#4E899E', '#074156'],
       },
     }
   },
   variants: {
     filter: ['responsive', 'hover'],
     backdropFilter: ['responsive', 'hover'], 
+    linearGradients: ['responsive', 'even']
   },
   corePlugins: {
     container: false

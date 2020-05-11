@@ -97,31 +97,6 @@ const HomePage = ({ data }) => {
               }}
             />
           </div>
-          {/* {posts.edges.map((projectData, key) => (
-            <Link
-              key={key}
-              to={"/recent-projects/" + projectData.node.slug}
-              className="flex p-1 md:w-1/2 recent-project-listing"
-            >
-              <span className="flex p-8 mb-4 text-white bg-gray-200 border-r-0 border-white border-solid shadow-lg recent-project-listing__number bg-gradient-b-green-green-dark font-display w-14 border-10">
-                <span className="m-auto">{key + 1}</span>
-              </span>
-              <div className="relative flex-grow block mb-4 overflow-hidden bg-gray-200 border-white border-solid shadow-lg border-10">
-                <Img
-                  fluid={projectData.node.heroImage.fluid}
-                  className="block object-cover w-full"
-                />
-                <div className="absolute top-0 bottom-0 left-0 right-0 z-30 flex flex-col items-start justify-center w-full h-full m-auto">
-                  <h2 className="p-2 m-0 text-xl bg-white lg:text-3xl">
-                    {projectData.node.title}
-                  </h2>
-                  <h3 className="p-2 m-0 text-lg font-normal bg-white bg-opacity-75 md:ml-4 lg:text-2xl font-display">
-                    {projectData.node.heroMinor}
-                  </h3>
-                </div>
-              </div>
-            </Link>
-          ))} */}
         </motion.div>
 
         <motion.div
@@ -172,27 +147,35 @@ const HomePage = ({ data }) => {
           transition="easeInOut"
           className="container flex flex-col mt-12 lg:flex-row"
         >
-          <div className="flex flex-col w-full p-8 text-white shadow-lg bg-gradient-b-green-green-dark lg:flex-row lg:flex-wrap lg:px-16">
-            <h2 className="w-full text-xl text-white sm:text-2xl lg:text-center">
-              Start your enquiry today...
-            </h2>
+          {post.sections.map((section, skey) => (
+            <div key={skey}>
+              {section.pages.map((page, pkey) => (
+                <div key={pkey} className="flex flex-row flex-1 my-4 ml-2 text-white border-white border-solid shadow-lg bg-gradient-b-green-green-dark border-10 even:bg-gradient-b-blue-blue-dark">
+                  <Img
+                    fluid={page.heroImage.fluid}
+                    className="w-6/12 opacity-25 sm:opacity-100"
 
-            <div className="lg:w-1/2">
-              <p className="mb-4">
-                Use the details below to get in touch with us.
-              </p>
-              <PhoneNumber className="block text-white hover:text-green-light lg:mb-1 lg:text-xl" />
-              <Email className="block text-white hover:text-green-light lg:text-xl" />
+                  />
+                  <div className="flex w-8/12 p-8 my-auto">
+                    <div className="flex flex-col">
+                      <h2 className="m-0 text-xl">
+                        {page.title}
+                      </h2>
+                      <p className="my-4">
+                        {page.heroIntro}
+                      </p>
+                      <Link
+                        className="self-start inline-block p-3 m-1 transition border-2 border-white border-solid rounded-xl hover:bg-white hover:text-green"
+                        to={"/recent-projects/" + page.slug}
+                      >
+                        See project
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
-
-            <div className="mt-8 lg:w-1/2 lg:m-0">
-              <p className="mb-4">
-                Alternatively, fill out our form below and we'll get back to
-                you.
-              </p>
-              <QuickContactForm />
-            </div>
-          </div>
+          ))}
         </motion.div>
       </motion.section>
     </>
@@ -236,7 +219,7 @@ export const query = graphql`
           title
           slug
           heroImage {
-            fluid {
+            fluid(imgixParams: {w: "600", h: "250"}) {
               ...GatsbyDatoCmsFluid
             }
           }
