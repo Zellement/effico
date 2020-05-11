@@ -50,7 +50,7 @@ const Hero = ({ heroMajor, heroMinor, heroIntro, heroImage, heroH1, heroButtons 
         </p>
       ) : null}
       {heroButtons ?
-      <div className="mt-8">
+      <div className="my-8">
         {heroButtons.map((btn, key) => (
           <Link to={btn.link.slug} key={key} className="inline-block p-3 m-1 text-sm transition border-2 border-white border-solid rounded-xl hover:bg-white hover:text-green lg:text-base">
             {btn.displayText}

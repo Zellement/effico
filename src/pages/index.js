@@ -7,6 +7,7 @@ import Img from "gatsby-image"
 
 import SEO from "../components/seo"
 import Hero from "../components/hero"
+import { HTMLContent } from "../components/content"
 import ProudToHaveWorkedWith from "../components/proud-to-have-worked-with"
 import Accreditations from "../components/accreditations"
 import QuickContactForm from "../components/quick-contact-form"
@@ -64,25 +65,27 @@ const HomePage = ({ data }) => {
         <motion.div
           variants={item}
           transition="easeInOut"
-          className="w-full mt-4 lg:w-8/12 lg:-mt-4 lg:-ml-20"
-        ></motion.div>
-
-        <motion.div
-          variants={item}
-          transition="easeInOut"
           className="container w-full -mt-8 md:flex-row md:flex"
         >
-          
           <WhyChooseEffico className="flex-1 md:mr-2" />
 
           <div className="flex flex-row flex-1 ml-2 bg-gray-200 border-white border-solid shadow-lg border-10">
             <div className="flex w-8/12 p-8">
               <div className="flex flex-col">
                 <h2 class="m-0 mb-1">Featured Project</h2>
-                <h3 className="m-0 text-xl font-normal font-display">{post.featuredProject.title}</h3>
+                <h3 className="m-0 text-xl font-normal font-display">
+                  {post.featuredProject.title}
+                </h3>
                 <p className="m-0">{post.featuredProject.completionDate}</p>
-                <p className="m-0 my-2 text-sm">{post.featuredProject.heroIntro}</p>
-                <Link className="self-start inline-block p-3 m-1 mt-auto text-sm text-white transition bg-green rounded-xl hover:bg-green-dark" to={"/recent-projects/" + post.featuredProject.slug}>See project</Link>
+                <p className="m-0 my-2 text-sm">
+                  {post.featuredProject.heroIntro}
+                </p>
+                <Link
+                  className="self-start inline-block p-3 m-1 mt-auto text-sm text-white transition bg-green rounded-xl hover:bg-green-dark"
+                  to={"/recent-projects/" + post.featuredProject.slug}
+                >
+                  See project
+                </Link>
               </div>
             </div>
             <Img
@@ -124,21 +127,45 @@ const HomePage = ({ data }) => {
         <motion.div
           variants={item}
           transition="easeInOut"
-          className="container flex flex-col mt-12 lg:flex-row"
+          className="container p-4 mt-8"
         >
-          <div className="flex flex-row flex-wrap w-full p-8 border-gray-200 border-solid shadow-lg border-10">
-            <div className="flex flex-row flex-wrap justify-center w-full lg:w-1/2 lg:pr-8">
-              <h2 className="w-full text-gray-600">
-                Proud to have worked with...
-              </h2>
-              <ProudToHaveWorkedWith className="w-1/2 p-2 my-auto sm:w-1/4 md:flex-1 md:w-full" />
-            </div>
-            <div className="flex flex-row flex-wrap justify-center w-full mt-8 lg:w-1/2 lg:pl-8 lg:m-0">
-              <h2 className="w-full text-gray-600">Accreditations</h2>
-              <Accreditations className="w-1/2 p-2 my-auto sm:w-1/4 md:flex-1 md:w-full" />
-            </div>
-          </div>
+          <motion.div
+            variants={item}
+            transition="easeInOut"
+            className="flex flex-col p-16 bg-gray-100 shadow-lg lg:flex-row"
+          >
+            <motion.div
+              variants={item}
+              transition="easeInOut"
+              className="w-full lg:w-6/12 content lg:pr-8"
+            >
+              <HTMLContent content={post.mainCopy} />
+            </motion.div>
+
+            <motion.div
+              variants={item}
+              transition="easeInOut"
+              className="flex flex-row flex-wrap w-full lg:flex-col lg:w-1/2 lg:pl-4"
+            >
+              <div className="flex flex-row flex-wrap justify-center w-full mt-8 lg:m-0">
+                <h2 className="w-full text-gray-600">Accreditations</h2>
+                <Accreditations className="w-1/2 p-2 my-auto sm:w-1/4 md:flex-1 md:w-full" />
+              </div>
+              <div className="flex flex-row flex-wrap justify-center w-full lg:pr-8 lg:mt-4">
+                <h2 className="w-full text-gray-600">
+                  Proud to have worked with...
+                </h2>
+                <ProudToHaveWorkedWith className="w-1/2 p-2 my-auto sm:w-1/4 md:flex-1 md:w-full" />
+              </div>
+            </motion.div>
+          </motion.div>
         </motion.div>
+
+        <motion.div
+          variants={item}
+          transition="easeInOut"
+          className="container flex flex-col mt-12 lg:flex-row"
+        ></motion.div>
 
         <motion.div
           variants={item}
