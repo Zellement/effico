@@ -1,5 +1,9 @@
 module.exports = {
   theme: {
+    filter: {
+      'none': 'none',
+      'grayscale': 'grayscale(1)'
+    },
     extend: {
       screens: {
       '2xl': '1500px'
@@ -46,5 +50,6 @@ module.exports = {
   },
   plugins: [
     require('tailwindcss-gradients'),
+    require('tailwindcss-filters'),
   ],
 }

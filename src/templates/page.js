@@ -82,7 +82,7 @@ const ServicePage = ({ data }) => {
               <GalleryCarousel images={post.gallery} />
             </div>
 
-            <div className="bg-gray-200 shadow-lg">
+            <div className="mb-4 bg-gray-200 shadow-lg">
               <WhyChooseEffico />
             </div>
           </motion.div>

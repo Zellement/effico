@@ -24,6 +24,7 @@
     "react-helmet": "^6.0.0",
     "react-icons": "^3.10.0",
     "simple-react-validator": "^1.4.6",
+    "tailwindcss-filters": "^3.0.0",
     "tailwindcss-gradients": "^3.0.0"
   },
   "devDependencies": {
