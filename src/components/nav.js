@@ -39,7 +39,7 @@ const Nav = class extends React.Component {
           </li>
         </ul>
       </div>
-      <div className="block p-2 text-center text-white md:hidden" onClick={this.toggleMenu}>
+      <div aria-label="Navigation menu button" tabIndex={0} role="button" className="block p-2 text-center text-white md:hidden" onClick={this.toggleMenu} onKeyDown={this.toggleMenu}>
         <GiHamburgerMenu className="inline-block -mt-px" /> Menu
       </div>
     </nav>
