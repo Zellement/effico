@@ -72,11 +72,10 @@ const HomePage = ({ data }) => {
           transition="easeInOut"
           className="container w-full -mt-8 md:flex-row md:flex"
         >
-          <div className="flex-1 mb-4 bg-gray-200 shadow-lg md:mr-2">
-            <WhyChooseEffico />
-          </div>
+          
+          <WhyChooseEffico className="flex-1 md:mr-2" />
 
-          <div className="flex flex-row flex-1 bg-gray-200 border-white border-solid shadow-lg border-10">
+          <div className="flex flex-row flex-1 ml-2 bg-gray-200 border-white border-solid shadow-lg border-10">
             <div className="flex w-8/12 p-8">
               <div className="flex flex-col">
                 <h2 class="m-0 mb-1">Featured Project</h2>

@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import { GoQuote } from "react-icons/go"
 
-const WhyChooseEffico = () => {
+const WhyChooseEffico = ({className}) => {
   const data = useStaticQuery(graphql`
     query WhyChooseQ {
       datoCmsOption(id: { eq: "DatoCmsOption-4652040-en" }) {
@@ -21,7 +21,7 @@ const WhyChooseEffico = () => {
 
   return (
     <>
-      <div className="flex flex-row border-white border-solid border-10">
+      <div className={className + " flex flex-row bg-gray-200 border-white border-solid shadow-lg border-10"}>
         <div className="flex w-8/12 p-8">
           <div className="m-auto">
             <h2>{data.datoCmsOption.quoteTitle}</h2>
