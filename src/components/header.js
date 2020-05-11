@@ -7,7 +7,7 @@ import Nav from '../components/nav'
 const Header = () => (
   <header className="container md:flex md:flex-col lg:flex-row md:pt-8">
 
-    <div className="flex p-6">
+    <div className="flex justify-center p-6 lg:justify-start lg:px-0">
       <Link to="/"><Logo className="block w-40 mx-auto" /></Link>
     </div>
 

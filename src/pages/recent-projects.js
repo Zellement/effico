@@ -1,13 +1,12 @@
 import React from "react"
 import { graphql } from "gatsby"
 import { motion } from "framer-motion"
+import { Link } from "gatsby"
+import Img from "gatsby-image"
 // import Img from 'gatsby-image'
 
 import SEO from "../components/seo"
 import Hero from "../components/hero"
-import { HTMLContent } from "../components/content"
-import WhyChooseEffico from "../components/why-choose-effico"
-import GalleryCarousel from "../components/gallery-carousel"
 import ProudToHaveWorkedWith from "../components/proud-to-have-worked-with"
 import Accreditations from "../components/accreditations"
 import QuickContactForm from "../components/quick-contact-form"
@@ -34,8 +33,7 @@ const item = {
   },
 }
 
-const ServicePage = ( {data} ) => {
-
+const ServicePage = ({ data }) => {
   const posts = data.allDatoCmsRecentProject
   const post = data.datoCmsRecentProjectPage
 
@@ -59,30 +57,40 @@ const ServicePage = ( {data} ) => {
             heroMinor={post.heroSecondary}
             heroIntro={post.heroIntro}
             heroImage={post.heroImage.fluid}
+            heroH1={true}
           />
         </motion.div>
 
         <motion.div
           variants={item}
           transition="easeInOut"
-          className="container flex flex-col lg:flex-row"
+          className="container w-full -mt-8 md:flex-row md:flex"
         >
-          <motion.div
-            variants={item}
-            transition="easeInOut"
-            className="w-full p-8 -mt-8 bg-gray-100 shadow-lg lg:w-10/12 content md:p-16 lg:pr-32"
-          >
-          <h1>Recent Projects</h1>
-            <>
-          {posts.edges.map(projectData => (
-            <>
-              {projectData.node.title}
-            </>
+          {posts.edges.map((projectData, key) => (
+            <Link
+              key={key}
+              to={"/recent-projects/" + projectData.node.slug}
+              className="flex p-1 md:w-1/2 recent-project-listing"
+            >
+              <span className="flex p-8 mb-4 text-white bg-gray-200 border-r-0 border-white border-solid shadow-lg recent-project-listing__number bg-gradient-b-green-green-dark font-display w-14 border-10">
+                <span className="m-auto">{key + 1}</span>
+              </span>
+              <div className="relative flex-grow block mb-4 overflow-hidden bg-gray-200 border-white border-solid shadow-lg border-10">
+                <Img
+                  fluid={projectData.node.heroImage.fluid}
+                  className="block object-cover w-full"
+                />
+                <div className="absolute top-0 bottom-0 left-0 right-0 z-30 flex flex-col items-start justify-center w-full h-full m-auto">
+                  <h2 className="p-2 m-0 text-xl bg-white lg:text-3xl">
+                    {projectData.node.title}
+                  </h2>
+                  <h3 className="p-2 m-0 text-lg font-normal bg-white bg-opacity-75 md:ml-4 lg:text-2xl font-display">
+                    {projectData.node.heroMinor}
+                  </h3>
+                </div>
+              </div>
+            </Link>
           ))}
-          </>
-          
-          </motion.div>
-
         </motion.div>
 
         <motion.div
@@ -139,35 +147,37 @@ const ServicePage = ( {data} ) => {
 export default ServicePage
 
 export const query = graphql`
-query RecentProjsQ {
-  allDatoCmsRecentProject {
-    edges {
-      node {
-        id
-        slug
-        title
-        heroImage {
-          fluid {
-            ...GatsbyDatoCmsFluid
+  query RecentProjsQ {
+    allDatoCmsRecentProject {
+      edges {
+        node {
+          id
+          slug
+          title
+          heroMajor
+          heroMinor
+          heroIntro
+          heroImage {
+            fluid {
+              ...GatsbyDatoCmsFluid
+            }
           }
         }
       }
     }
-  }
-  datoCmsRecentProjectPage {
-    heroImage {
-      fluid {
-        ...GatsbyDatoCmsFluid
+    datoCmsRecentProjectPage {
+      heroImage {
+        fluid {
+          ...GatsbyDatoCmsFluid
+        }
+      }
+      heroPrimary
+      heroSecondary
+      heroIntro
+      seo {
+        description
+        title
       }
     }
-    heroPrimary
-    heroSecondary
-    heroIntro
-    seo {
-      description
-      title
-    }
   }
-}
-
 `

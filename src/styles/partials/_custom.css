@@ -1,0 +1,10 @@
+.recent-project-listing {
+  h2, h3 {
+    @apply transition duration-300;
+  }
+  &:hover {
+    h2, h3 {
+      @apply bg-blue-dark underline text-white;
+    }
+  }
+}
