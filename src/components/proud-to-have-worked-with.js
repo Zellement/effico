@@ -5,7 +5,7 @@ import Img from "gatsby-image"
 const ProudToHaveWorkedWith = ({ className }) => {
   const data = useStaticQuery(graphql`
     query WorkedWithQ {
-      datoCmsOption(id: { eq: "DatoCmsOption-4652040-en" }) {
+      datoCmsOption {
         workedWith {
           filename
           fluid {
@@ -20,7 +20,7 @@ const ProudToHaveWorkedWith = ({ className }) => {
     <>
       {data.datoCmsOption.workedWith.map((imageData) => (
         <div className={className} key={imageData.filename}>
-          <Img fluid={imageData.fluid} className="block w-full h-full" />
+          <Img fluid={imageData.fluid} className="block w-full transition-all duration-900 filter-grayscale hover:filter-none" />
         </div>
       ))}
     </>

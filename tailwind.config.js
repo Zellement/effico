@@ -1,7 +1,7 @@
 module.exports = {
   theme: {
     filter: {
-      'none': 'none',
+      'none': 'grayscale(0)',
       'grayscale': 'grayscale(1)'
     },
     extend: {
@@ -44,6 +44,10 @@ module.exports = {
         'green-green-dark': ['#387B37', '#1B301B'],
       },
     }
+  },
+  variants: {
+    filter: ['responsive', 'hover'],
+    backdropFilter: ['responsive', 'hover'], 
   },
   corePlugins: {
     container: false

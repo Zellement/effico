@@ -20,7 +20,7 @@ const Accreditations = ({ className }) => {
     <>
       {data.datoCmsOption.accreditations.map((imageData) => (
         <div className={className} key={imageData.title}>
-          <Img fluid={imageData.fluid} className="block w-full" />
+          <Img fluid={imageData.fluid} className="block w-full transition-all duration-900 filter-grayscale hover:filter-none" />
         </div>
       ))}
     </>
