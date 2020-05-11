@@ -10,6 +10,7 @@ import Hero from "../components/hero"
 import ProudToHaveWorkedWith from "../components/proud-to-have-worked-with"
 import Accreditations from "../components/accreditations"
 import QuickContactForm from "../components/quick-contact-form"
+import WhyChooseEffico from "../components/why-choose-effico"
 
 import PhoneNumber from "../components/atoms/phone-number"
 import Email from "../components/atoms/email"
@@ -63,8 +64,37 @@ const HomePage = ({ data }) => {
         <motion.div
           variants={item}
           transition="easeInOut"
+          className="w-full mt-4 lg:w-8/12 lg:-mt-4 lg:-ml-20"
+        ></motion.div>
+
+        <motion.div
+          variants={item}
+          transition="easeInOut"
           className="container w-full -mt-8 md:flex-row md:flex"
         >
+          <div className="flex-1 mb-4 bg-gray-200 shadow-lg md:mr-2">
+            <WhyChooseEffico />
+          </div>
+
+          <div className="flex flex-row flex-1 bg-gray-200 border-white border-solid shadow-lg border-10">
+            <div className="flex w-8/12 p-8">
+              <div className="flex flex-col">
+                <h2 class="m-0 mb-1">Featured Project</h2>
+                <h3 className="m-0 text-xl font-normal font-display">{post.featuredProject.title}</h3>
+                <p className="m-0">{post.featuredProject.completionDate}</p>
+                <p className="m-0 my-2 text-sm">{post.featuredProject.heroIntro}</p>
+                <Link className="self-start inline-block p-3 m-1 mt-auto text-sm text-white transition bg-green rounded-xl hover:bg-green-dark" to={"/recent-projects/" + post.featuredProject.slug}>See project</Link>
+              </div>
+            </div>
+            <Img
+              fluid={post.featuredProject.heroImage.fluid}
+              className="w-4/12 ml-1 opacity-25 sm:opacity-100"
+              imgStyle={{
+                objectFit: "cover",
+                objectPostion: "center",
+              }}
+            />
+          </div>
           {/* {posts.edges.map((projectData, key) => (
             <Link
               key={key}
@@ -161,6 +191,17 @@ export const query = graphql`
         displayText
         link {
           slug
+        }
+      }
+      featuredProject {
+        title
+        completionDate(formatString: "DD MMMM YYYY")
+        slug
+        heroIntro
+        heroImage {
+          fluid {
+            ...GatsbyDatoCmsFluid
+          }
         }
       }
       sections {
