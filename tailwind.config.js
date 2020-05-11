@@ -7,6 +7,9 @@ module.exports = {
       borderWidth: {
         '10': '10px'
       },
+      borderRadius: {
+        'xl': '.8rem'
+      },
       fontFamily: {
         sans: [
           'Roboto',
