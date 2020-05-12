@@ -34,8 +34,8 @@ const Nav = class extends React.Component {
           <li className="navigation-wrapper__list-item">
             <Link className="navigation-wrapper__link" onClick={this.toggleMenu} activeClassName="is-active" to="/recent-projects/"><span className="lg:block">Recent</span> Projects</Link>
           </li>
-          <li className="flex ">
-            <Link className="flex flex-grow w-full h-full px-2 mx-2 whitespace-no-wrap border-2 border-solid rounded-lg border-green hover:bg-green-light" onClick={this.toggleMenu} activeClassName="is-contact-active" to="/contact-us/"><span className="my-auto">Contact Us</span></Link>
+          <li className="md:flex">
+            <Link className="w-full h-full p-1 whitespace-no-wrap rounded-lg md:mx-2 md:flex md:flex-grow md:px-2 md:border-2 md:border-solid md:border-green hover:bg-green-light " onClick={this.toggleMenu} activeClassName="is-contact-active" to="/contact-us/"><span className="my-auto">Contact Us</span></Link>
           </li>
         </ul>
       </div>

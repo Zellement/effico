@@ -101,7 +101,7 @@ const HomePage = ({ data }) => {
           <motion.div
             variants={item}
             transition="easeInOut"
-            className="flex flex-col p-16 bg-gray-100 shadow-lg lg:flex-row"
+            className="flex flex-col p-8 bg-gray-100 shadow-lg md:p-16 lg:flex-row"
           >
             <motion.div
               variants={item}
