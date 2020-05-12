@@ -1,10 +1,6 @@
 import React from "react"
-import { graphql } from "gatsby"
 import { motion } from "framer-motion"
 import { Link } from "gatsby"
-import Img from "gatsby-image"
-// import Img from 'gatsby-image'
-
 import SEO from "../components/seo"
 
 const duration = 0.35

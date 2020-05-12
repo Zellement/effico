@@ -3,8 +3,6 @@ import { graphql } from "gatsby"
 import { motion } from "framer-motion"
 import { Link } from "gatsby"
 import Img from "gatsby-image"
-// import Img from 'gatsby-image'
-
 import SEO from "../components/seo"
 import Hero from "../components/hero"
 import { HTMLContent } from "../components/content"
@@ -65,7 +63,7 @@ const HomePage = ({ data }) => {
         >
           <WhyChooseEffico className="flex-1 md:mr-2" />
 
-          <div className="flex flex-row flex-1 ml-2 bg-gray-200 border-white border-solid shadow-lg border-10">
+          <div className="flex flex-row flex-1 mt-4 bg-gray-200 border-white border-solid shadow-lg md:mt-0 md:ml-2 border-10">
             <div className="flex w-8/12 p-8">
               <div className="flex flex-col">
                 <h2 class="m-0 mb-1">Featured Project</h2>
