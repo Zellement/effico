@@ -10,11 +10,7 @@ import Hero from "../components/hero"
 import { HTMLContent } from "../components/content"
 import ProudToHaveWorkedWith from "../components/proud-to-have-worked-with"
 import Accreditations from "../components/accreditations"
-import QuickContactForm from "../components/quick-contact-form"
 import WhyChooseEffico from "../components/why-choose-effico"
-
-import PhoneNumber from "../components/atoms/phone-number"
-import Email from "../components/atoms/email"
 
 const duration = 0.35
 
