@@ -41,8 +41,79 @@ class GalleryCarousel extends Component {
   }
 
   render() {
-    return (
-      <>
+    if (this.state.images.length > 1) {
+      return (
+        <>
+
+          {!this.state.isLoading ? (
+            <motion.section
+              variants={container}
+              initial="hidden"
+              animate="visible"
+            >
+              <div className="relative">
+                <EmblaCarouselReact
+                  emblaRef={c => (this.embla = c)}
+                  htmlTagName={`div`}
+                  options={{
+                    align: 'start',
+                    slidesToScroll: 1,
+                    draggable: true,
+                    loop: true,
+                    speed: 8
+                  }}
+                  className="embla-viewport"
+                >
+                  <div className="max-w-full embla__container">
+                    {this.state.images.map((image, index) =>
+                      <motion.div
+                        key={index}
+                        variants={item}
+                        transition="easeInOut"
+                        className="block embla__slide embla__slide--gallery"
+                      >
+                        <Img
+                          backgroundColor="#26486E"
+                          fluid={image.fluid}
+                          key={image.title}
+                          alt={image.alt}
+                          className="block w-full mb-px"
+                        />
+                        <span className="absolute bottom-0 right-0 z-20 p-1 text-sm text-black bg-white">{('0' + (index + 1)).slice(-2)}</span>
+                      </motion.div>
+                    )}
+                  </div>
+                </EmblaCarouselReact>
+                <motion.button
+                  variants={item}
+                  transition="easeInOut"
+                  className="absolute top-0 left-0 z-10 p-1 font-serif text-4xl font-bold text-white appearance-none cursor-pointer bg-green focus:outline-none"
+                  onClick={() => this.embla.scrollPrev()}
+                  aria-label="Previous image"
+                >
+                  <IoIosArrowBack />
+                </motion.button>
+                <motion.button
+                  variants={item}
+                  transition="easeInOut"
+                  className="absolute top-0 right-0 z-10 p-1 font-serif text-4xl font-bold text-white appearance-none cursor-pointer bg-green focus:outline-none"
+                  onClick={() => this.embla.scrollNext()}
+                  aria-label="Next image"
+                >
+                  <IoIosArrowForward />
+                </motion.button>
+              </div>
+            </motion.section>
+          ) : (
+              <p>Loading images&hellip;</p>
+            )}
+        </>
+      )
+    }
+    else
+      return (
+        <>
+
         {!this.state.isLoading ? (
           <motion.section
             variants={container}
@@ -56,7 +127,7 @@ class GalleryCarousel extends Component {
                 options={{
                   align: 'start',
                   slidesToScroll: 1,
-                  draggable: true,
+                  draggable: false,
                   loop: true,
                   speed: 8
                 }}
@@ -77,36 +148,17 @@ class GalleryCarousel extends Component {
                         alt={image.alt}
                         className="block w-full mb-px"
                       />
-                      <span className="absolute bottom-0 right-0 z-20 p-1 text-sm text-black bg-white">{('0' + (index + 1)).slice(-2)}</span>
                     </motion.div>
                   )}
                 </div>
               </EmblaCarouselReact>
-              <motion.button
-                variants={item}
-                transition="easeInOut"
-                className="absolute top-0 left-0 z-10 p-1 font-serif text-4xl font-bold text-white appearance-none cursor-pointer bg-green focus:outline-none"
-                onClick={() => this.embla.scrollPrev()}
-                aria-label="Previous image"
-              >
-                <IoIosArrowBack />
-              </motion.button>
-              <motion.button
-                variants={item}
-                transition="easeInOut"
-                className="absolute top-0 right-0 z-10 p-1 font-serif text-4xl font-bold text-white appearance-none cursor-pointer bg-green focus:outline-none"
-                onClick={() => this.embla.scrollNext()}
-                aria-label="Next image"
-              >
-                <IoIosArrowForward />
-              </motion.button>
             </div>
           </motion.section>
         ) : (
             <p>Loading images&hellip;</p>
           )}
       </>
-    )
+      )
   }
 }
 
