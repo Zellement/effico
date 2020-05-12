@@ -75,3 +75,7 @@ Navigation
     @apply absolute bottom-0 left-0 w-full h-px -mb-2 bg-green;
   }
 }
+
+.is-contact-active {
+  @apply text-white bg-green-dark;
+}
