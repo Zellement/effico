@@ -19,8 +19,11 @@ const Nav = class extends React.Component {
     return (     
     <nav className="relative w-3/12 md:w-full lg:flex lg:content-end lg:justify-end lg:flex-col">
       <div className={`lg:mt-5 navigation-wrapper navigation-wrapper--${menuActive}`} >
-        <span className="absolute top-0 right-0 z-20 p-2 text-3xl md:hidden" onClick={this.toggleMenu} onKeyDown={this.toggleMenu}><IoMdCloseCircleOutline /></span>
+        <span className="absolute top-0 right-0 z-20 p-2 text-3xl text-white bg-black rounded-bl md:hidden" onClick={this.toggleMenu} onKeyDown={this.toggleMenu}><IoMdCloseCircleOutline /></span>
         <ul className="md:bg-red md:flex md:w-full md:flex-row md:justify-start md:items-stretch lg:justify-end">
+          <li className="md:hidden navigation-wrapper__list-item">
+            <Link className="navigation-wrapper__link" onClick={this.toggleMenu} activeClassName="is-active" to="/">Home</Link>
+          </li>
           <li className="navigation-wrapper__list-item">
             <Link className="navigation-wrapper__link" onClick={this.toggleMenu} activeClassName="is-active" to="/domestic-electrical-services/"><span className="lg:block">Domestic</span> Electrical Services</Link>
           </li>
