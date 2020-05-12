@@ -34,7 +34,7 @@ const HomePage = ({ data }) => {
 
   return (
     <>
-      <SEO title="Recent Projects" description="See our recent projects" />
+      <SEO title={post.seo.title} description={post.seo.description} />
 
       <motion.section
         variants={container}
@@ -194,6 +194,10 @@ export const query = graphql`
         link {
           slug
         }
+      }
+      seo {
+        description
+        title
       }
       featuredProject {
         title
