@@ -139,25 +139,24 @@ const HomePage = ({ data }) => {
         <motion.div
           variants={item}
           transition="easeInOut"
-          className="container flex flex-col mt-12 lg:flex-row"
-        ></motion.div>
-
-        <motion.div
-          variants={item}
-          transition="easeInOut"
-          className="container flex flex-col mt-12 lg:flex-row"
+          className="container flex flex-col mt-4 overflow-hidden lg:flex-row"
         >
           {post.sections.map((section, skey) => (
-            <div key={skey}>
+            <div key={skey} className="w-full ">
               {section.pages.map((page, pkey) => (
-                <div key={pkey} className="flex flex-row flex-1 my-4 ml-2 text-white border-white border-solid shadow-lg bg-gradient-b-green-green-dark border-10 even:bg-gradient-b-blue-blue-dark">
-                  <Img
-                    fluid={page.heroImage.fluid}
-                    className="w-6/12 opacity-25 sm:opacity-100"
-
-                  />
-                  <div className="flex w-8/12 p-8 my-auto">
-                    <div className="flex flex-col">
+                <div key={pkey} className="flex flex-col my-4 ml-2 overflow-hidden text-white border-white border-solid shadow-lg sections md:flex-row bg-gradient-b-green-green-dark border-10 even:bg-gradient-b-blue-blue-dark">
+                  <div className="flex flex-grow w-full img-container md:w-1/2">
+                    <Img
+                      fluid={page.heroImage.fluid}
+                      className="block w-full h-40 md:h-full"
+                      imgStyle={{
+                        objectFit: "cover",
+                        objectPostion: "center",
+                      }}
+                    />
+                  </div>
+                  <div className="flex w-full p-12 md:w-1/2">
+                    <div className="flex flex-col my-auto">
                       <h2 className="m-0 text-xl">
                         {page.title}
                       </h2>
@@ -219,7 +218,7 @@ export const query = graphql`
           title
           slug
           heroImage {
-            fluid(imgixParams: {w: "600", h: "250"}) {
+            fluid(imgixParams: {w: "1000", h: "575", fit: "crop"}) {
               ...GatsbyDatoCmsFluid
             }
           }

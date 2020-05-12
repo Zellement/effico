@@ -4,7 +4,13 @@
   }
   &:hover {
     h2, h3 {
-      @apply bg-blue-dark underline text-white;
+      @apply text-white underline bg-blue-dark;
     }
+  }
+}
+
+@screen md {
+  .sections:nth-of-type(even) .img-container {
+    @apply order-1;
   }
 }
