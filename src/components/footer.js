@@ -4,6 +4,7 @@ import PhoneNumber from "../components/atoms/phone-number"
 import Email from "../components/atoms/email"
 import ReactCountryFlag from "react-country-flag"
 import Accreditations from "../components/accreditations"
+import { TiSocialLinkedin, TiSocialFacebook, TiSocialTwitter } from "react-icons/ti"
 
 const Footer = () => {
   const data = useStaticQuery(graphql`
@@ -11,6 +12,9 @@ const Footer = () => {
       datoCmsOption {
         vatNumber
         registrationNumber
+        twitterUrl
+        facebookUrl
+        linkedinUrl
       }
     }
   `)
@@ -23,8 +27,8 @@ const Footer = () => {
             fontSize: "1.4em",
             lineHeight: "2em",
             marginRight: "2px",
-            marginTop: 'auto',
-            marginBottom: 'auto'
+            marginTop: "auto",
+            marginBottom: "auto",
           }}
           svg
         />
@@ -33,24 +37,68 @@ const Footer = () => {
           style={{
             fontSize: "1.4em",
             lineHeight: "2em",
-            marginTop: 'auto',
-            marginBottom: 'auto'
+            marginTop: "auto",
+            marginBottom: "auto",
           }}
           svg
         />
       </div>
 
       <PhoneNumber className="block my-auto mr-4 text-gray-700 hover:text-green-light" />
-      <Email className="block my-auto mr-4 text-gray-700 hover:text-green-light" />
-      
+      <Email className="block my-auto mr-6 text-gray-700 hover:text-green-light" />
+
+      {data.datoCmsOption.linkedinUrl ? (
+        <a
+          class="my-auto text-xl"
+          target="_blank"
+          rel="noopener noreferrer"
+          href={data.datoCmsOption.linkedinUrl}
+        >
+          <TiSocialLinkedin />
+        </a>
+      ) : null}
+
+      {data.datoCmsOption.twitterUrl ? (
+        <a
+          class="my-auto text-xl"
+          target="_blank"
+          rel="noopener noreferrer"
+          href={data.datoCmsOption.twitterUrl}
+        >
+          <TiSocialTwitter />
+        </a>
+      ) : null}
+
+      {data.datoCmsOption.facebookUrl ? (
+        <a
+          class="my-auto text-xl"
+          target="_blank"
+          rel="noopener noreferrer"
+          href={data.datoCmsOption.facebookUrl}
+        >
+          <TiSocialFacebook />
+        </a>
+      ) : null}
+
       <div className="flex max-w-sm my-4 md:ml-8">
-      <Accreditations className="block w-12 p-1 my-auto" />
+        <Accreditations className="block w-12 p-1 my-auto" />
       </div>
 
       <p className="w-full mt-4 text-gray-400">
         Effico Ltd. are a registered company in England &amp; Wales &bull;
         Registration Number {data.datoCmsOption.registrationNumber} &bull; VAT
         Number {data.datoCmsOption.vatNumber}
+      </p>
+
+      <p className="mt-4">
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-gray-400"
+          href="https://www.zellement.com"
+        >
+          Web Design by Zellement
+        </a>
       </p>
     </div>
   )
