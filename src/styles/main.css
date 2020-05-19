@@ -12,8 +12,25 @@
 @import './partials/_container.css';
 @import './partials/_typography.css';
 @import './partials/_navigation.css';
-@import './partials/_custom.css';
 @import './partials/_embla-carousel.css';
 
 /* Tailwind Utils */
 @import 'tailwindcss/utilities';
+
+
+.recent-project-listing {
+  h2, h3 {
+    @apply transition duration-300;
+  }
+  &:hover {
+    h2, h3 {
+      @apply text-white underline bg-blue-dark;
+    }
+  }
+}
+
+@screen md {
+  .sections:nth-of-type(even) .img-container {
+    @apply order-1;
+  }
+}

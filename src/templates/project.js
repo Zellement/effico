@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import { motion } from "framer-motion"
+import { GoQuote } from "react-icons/go"
 // import Img from 'gatsby-image'
 
 import SEO from "../components/seo"
@@ -68,9 +69,19 @@ const ServicePage = ({ data }) => {
           <motion.div
             variants={item}
             transition="easeInOut"
-            className="w-full p-8 -mt-8 bg-gray-100 shadow-lg lg:w-10/12 content md:p-16 lg:pr-32"
+            className="w-full p-8 -mt-8 bg-gray-100 shadow-lg lg:w-10/12 md:p-16 lg:pr-32"
           >
-            <HTMLContent content={post.content} />
+            <HTMLContent className="content" content={post.content} />
+
+            <div className="relative p-10 mt-12 text-sm bg-white shadow font-display">
+              <div className="absolute top-0 left-0 p-2 -mt-2 -ml-2 bg-gray-200 shadow">
+              <GoQuote className="inline text-lg opacity-25" /> <span className="text-xs tracking-wider uppercase">Testimonial</span>
+              </div>
+              <HTMLContent className="content" content={post.testimonialContent} />
+              <p className="-mb-4 font-sans font-bold">{post.testimonialName}<br />
+              {post.testimonialRole}</p>
+            </div>
+
           </motion.div>
 
           <motion.div
