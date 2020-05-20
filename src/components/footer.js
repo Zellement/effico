@@ -54,7 +54,7 @@ const Footer = () => {
         />
       </div>
 
-      <PhoneNumber className="block my-auto mr-4 text-gray-700 hover:text-green-light" />
+      <PhoneNumber className="block p-4 my-auto mr-4 text-gray-700 hover:text-green-light" />
       <Email className="block p-4 my-auto mr-6 text-gray-700 hover:text-green-light" />
 
       {data.datoCmsOption.linkedinUrl ? (
