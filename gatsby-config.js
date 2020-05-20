@@ -48,8 +48,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `effico-ltd`,
+        short_name: `effico`,
         start_url: `/`,
         background_color: `#1B301B`,
         theme_color: `#1B301B`,
@@ -57,6 +57,7 @@ module.exports = {
         icon: `src/images/logo-small.png`,
       },
     },
+    `gatsby-plugin-offline`,
   ],
 }
 
