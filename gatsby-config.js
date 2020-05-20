@@ -25,9 +25,22 @@ module.exports = {
       }
     },
     {
+      resolve: "gatsby-plugin-preconnect",
+      options: {
+        domains: ["https://www.google-analytics.com"],
+      },
+    },
+    {
       resolve: `gatsby-source-datocms`,
       options: {
         apiToken: process.env.DATO_API_KEY,
+      },
+    },
+     {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        // The property ID; the tracking code won't be generated without it
+        trackingId: "UA-167220984-1",
       },
     },
     `gatsby-transformer-sharp`,
@@ -46,3 +59,4 @@ module.exports = {
     },
   ],
 }
+

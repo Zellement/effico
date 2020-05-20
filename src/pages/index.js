@@ -159,9 +159,9 @@ const HomePage = ({ data }) => {
                       </p>
                       <Link
                         className="self-start inline-block p-3 m-1 transition border-2 border-white border-solid rounded-xl hover:bg-white hover:text-green"
-                        to={"/recent-projects/" + page.slug}
+                        to={page.slug}
                       >
-                        See project
+                        Read more
                       </Link>
                     </div>
                   </div>
