@@ -55,11 +55,11 @@ const Footer = () => {
       </div>
 
       <PhoneNumber className="block my-auto mr-4 text-gray-700 hover:text-green-light" />
-      <Email className="block my-auto mr-6 text-gray-700 hover:text-green-light" />
+      <Email className="block p-4 my-auto mr-6 text-gray-700 hover:text-green-light" />
 
       {data.datoCmsOption.linkedinUrl ? (
         <a
-          class="my-auto text-xl"
+          class="my-auto text-xl p-4"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Connect with us on LinkedIn"
@@ -71,7 +71,7 @@ const Footer = () => {
 
       {data.datoCmsOption.twitterUrl ? (
         <a
-          class="my-auto text-xl"
+          class="my-auto text-xl p-4"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Follow us on Twitter"
@@ -83,7 +83,7 @@ const Footer = () => {
 
       {data.datoCmsOption.facebookUrl ? (
         <a
-          class="my-auto text-xl"
+          class="my-auto text-xl p-4"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Like us on Facebook"
