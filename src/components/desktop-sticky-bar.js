@@ -11,23 +11,33 @@ const DesktopStickyBar = () => (
     <PhoneNumber className="inline-block p-2 mr-4 text-center text-white hover:text-green-light" />
     <Email className="inline-block p-2 mr-4 text-center text-white hover:text-green-light" />
     <div className="flex flex-row justify-center w-auto py-2">
-      <ReactCountryFlag
-        countryCode="GB"
-        style={{
-          fontSize: "1.4em",
-          lineHeight: "2em",
-          marginRight: '2px'
-        }}
-        svg
-      />
-      <ReactCountryFlag
-        countryCode="PL"
-        style={{
-          fontSize: "1.4em",
-          lineHeight: "2em",
-        }}
-        svg
-      />
+        <ReactCountryFlag
+          alt="UK flag"
+          title="UK flag"
+          aria-label="UK flag"
+          countryCode="GB"
+          style={{
+            fontSize: "1.4em",
+            lineHeight: "2em",
+            marginRight: "2px",
+            marginTop: "auto",
+            marginBottom: "auto",
+          }}
+          svg
+        />
+        <ReactCountryFlag
+          alt="Polish flag"
+          title="Polish flag"
+          aria-label="Polish flag"
+          countryCode="PL"
+          style={{
+            fontSize: "1.4em",
+            lineHeight: "2em",
+            marginTop: "auto",
+            marginBottom: "auto",
+          }}
+          svg
+        />
     </div>
 
     </div>
