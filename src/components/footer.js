@@ -4,7 +4,11 @@ import PhoneNumber from "../components/atoms/phone-number"
 import Email from "../components/atoms/email"
 import ReactCountryFlag from "react-country-flag"
 import Accreditations from "../components/accreditations"
-import { TiSocialLinkedin, TiSocialFacebook, TiSocialTwitter } from "react-icons/ti"
+import {
+  TiSocialLinkedin,
+  TiSocialFacebook,
+  TiSocialTwitter,
+} from "react-icons/ti"
 
 const Footer = () => {
   const data = useStaticQuery(graphql`
@@ -22,6 +26,9 @@ const Footer = () => {
     <div className="container sm:flex sm:flex-row sm:flex-wrap sm:pt-8">
       <div className="flex flex-row justify-center w-auto my-8 sm:m-0 sm:mr-4">
         <ReactCountryFlag
+          alt="UK flag"
+          title="UK flag"
+          aria-label="UK flag"
           countryCode="GB"
           style={{
             fontSize: "1.4em",
@@ -33,6 +40,9 @@ const Footer = () => {
           svg
         />
         <ReactCountryFlag
+          alt="Polish flag"
+          title="Polish flag"
+          aria-label="Polish flag"
           countryCode="PL"
           style={{
             fontSize: "1.4em",
