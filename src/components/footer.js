@@ -97,17 +97,17 @@ const Footer = () => {
         <Accreditations className="block w-12 p-1 my-auto" />
       </div>
 
-      <p className="w-full mt-4 text-gray-400">
+      <p className="w-full mt-4 text-gray-800">
         Effico Ltd. are a registered company in England &amp; Wales &bull;
         Registration Number {data.datoCmsOption.registrationNumber} &bull; VAT
         Number {data.datoCmsOption.vatNumber}
       </p>
 
-      <p className="mt-4">
+      <p className="mt-8">
         <a
           target="_blank"
           rel="noopener noreferrer"
-          className="text-gray-400"
+          className="text-gray-800"
           href="https://www.zellement.com"
         >
           Web Design by Zellement

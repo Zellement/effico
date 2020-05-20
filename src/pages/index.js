@@ -117,11 +117,11 @@ const HomePage = ({ data }) => {
               className="flex flex-row flex-wrap w-full lg:flex-col lg:w-1/2 lg:pl-4"
             >
               <div className="flex flex-row flex-wrap justify-center w-full mt-8 lg:m-0">
-                <h2 className="w-full text-gray-600">Accreditations</h2>
+                <h2 className="w-full text-gray-800">Accreditations</h2>
                 <Accreditations className="w-1/2 p-2 my-auto sm:w-1/4 md:flex-1 md:w-full" />
               </div>
-              <div className="flex flex-row flex-wrap justify-center w-full lg:pr-8 lg:mt-4">
-                <h2 className="w-full text-gray-600">
+              <div className="flex flex-row flex-wrap justify-center w-full mt-4 lg:pr-8">
+                <h2 className="w-full text-gray-800">
                   Proud to have worked with...
                 </h2>
                 <ProudToHaveWorkedWith className="w-1/2 p-2 my-auto sm:w-1/4 md:flex-1 md:w-full" />
