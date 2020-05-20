@@ -62,6 +62,7 @@ const Footer = () => {
           class="my-auto text-xl"
           target="_blank"
           rel="noopener noreferrer"
+          aria-label="Connect with us on LinkedIn"
           href={data.datoCmsOption.linkedinUrl}
         >
           <TiSocialLinkedin />
@@ -73,6 +74,7 @@ const Footer = () => {
           class="my-auto text-xl"
           target="_blank"
           rel="noopener noreferrer"
+          aria-label="Follow us on Twitter"
           href={data.datoCmsOption.twitterUrl}
         >
           <TiSocialTwitter />
@@ -84,6 +86,7 @@ const Footer = () => {
           class="my-auto text-xl"
           target="_blank"
           rel="noopener noreferrer"
+          aria-label="Like us on Facebook"
           href={data.datoCmsOption.facebookUrl}
         >
           <TiSocialFacebook />
