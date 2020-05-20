@@ -89,13 +89,13 @@ export default class Contact extends React.Component {
               <input
                 className="flex-grow p-2 text-white placeholder-green-light bg-green-dark"
                 placeholder="Email or telephone"
-                type="email"
-                name="email-telephone"
+                type="text"
+                name="email_telephone"
                 onChange={this.handleChange}
               />
               {this.validator.message(
-                "email-telephone",
-                this.state.email,
+                "email_telephone",
+                this.state.email_telephone,
                 "required"
               )}
             </label>
@@ -110,7 +110,7 @@ export default class Contact extends React.Component {
             />
             {this.validator.message(
               "details",
-              this.state.telephone,
+              this.state.details,
               "required"
             )}
           </label>

@@ -2,8 +2,6 @@ import React from "react"
 import { graphql } from "gatsby"
 import { motion } from "framer-motion"
 import { GoQuote } from "react-icons/go"
-// import Img from 'gatsby-image'
-
 import SEO from "../components/seo"
 import Hero from "../components/hero"
 import { HTMLContent } from "../components/content"

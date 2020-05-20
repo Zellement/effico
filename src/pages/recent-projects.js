@@ -3,8 +3,6 @@ import { graphql } from "gatsby"
 import { motion } from "framer-motion"
 import { Link } from "gatsby"
 import Img from "gatsby-image"
-// import Img from 'gatsby-image'
-
 import SEO from "../components/seo"
 import Hero from "../components/hero"
 import ProudToHaveWorkedWith from "../components/proud-to-have-worked-with"
