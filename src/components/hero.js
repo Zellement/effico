@@ -27,6 +27,7 @@ const Hero = ({ heroMajor, heroMinor, heroIntro, heroImage, heroH1, heroButtons 
   <>
     <div className="absolute top-0 bottom-0 left-0 right-0 -z-20">
       <Img
+        loading="eager"
         fluid={heroImage}
         className="w-full h-full filter-grayscale"
         imgStyle={{

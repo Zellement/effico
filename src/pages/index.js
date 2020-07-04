@@ -205,7 +205,7 @@ export const query = graphql`
         slug
         heroIntro
         heroImage {
-          fluid {
+          fluid(maxWidth: 300) {
             ...GatsbyDatoCmsFluid
           }
         }

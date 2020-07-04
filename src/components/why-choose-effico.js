@@ -11,7 +11,7 @@ const WhyChooseEffico = ({className}) => {
         quote
         quoteTitle
         quoteImage {
-          fluid {
+          fluid(maxWidth: 300) {
             ...GatsbyDatoCmsFluid
           }
         }
