@@ -5,6 +5,7 @@ module.exports = {
     title: `Effico Ltd`,
     description: `Domestic and commercial electrical contractors.`,
     author: `@Zellement`,
+    siteUrl: `https://www.effico.ltd`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -45,6 +46,7 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
