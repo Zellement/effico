@@ -54,42 +54,42 @@ const Footer = () => {
         />
       </div>
 
-      <PhoneNumber className="block p-4 my-auto mr-4 text-gray-700 hover:text-green-light" />
-      <Email className="block p-4 my-auto mr-6 text-gray-700 hover:text-green-light" />
+      <PhoneNumber className="block p-4 pl-0 my-auto mr-4 text-gray-700 hover:text-green-light" />
+      <Email className="block p-4 pl-0 my-auto mr-6 text-gray-700 hover:text-green-light" />
 
       {data.datoCmsOption.linkedinUrl ? (
         <a
-          class="my-auto text-xl p-4"
+          className="pr-4 my-auto text-xl"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Connect with us on LinkedIn"
           href={data.datoCmsOption.linkedinUrl}
         >
-          <TiSocialLinkedin />
+          <TiSocialLinkedin className="inline" />
         </a>
       ) : null}
 
       {data.datoCmsOption.twitterUrl ? (
         <a
-          class="my-auto text-xl p-4"
+          className="pr-4 my-auto text-xl"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Follow us on Twitter"
           href={data.datoCmsOption.twitterUrl}
         >
-          <TiSocialTwitter />
+          <TiSocialTwitter className="inline" />
         </a>
       ) : null}
 
       {data.datoCmsOption.facebookUrl ? (
         <a
-          class="my-auto text-xl p-4"
+          className="pr-4 my-auto text-xl"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Like us on Facebook"
           href={data.datoCmsOption.facebookUrl}
         >
-          <TiSocialFacebook />
+          <TiSocialFacebook className="inline" />
         </a>
       ) : null}
 
