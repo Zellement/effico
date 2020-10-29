@@ -31,11 +31,7 @@ module.exports = {
         domains: ["https://www.google-analytics.com"],
       },
     },
-    {
-      resolve: 'gatsby-plugin-robots-txt',
-      options: {
-        policy: [{ userAgent: '*', allow: '/' }]
-      },
+    'gatsby-plugin-robots-txt',
     {
       resolve: `gatsby-source-datocms`,
       options: {
