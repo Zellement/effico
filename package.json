@@ -15,6 +15,7 @@
     "gatsby-plugin-postcss": "^2.3.9",
     "gatsby-plugin-preconnect": "^1.1.54",
     "gatsby-plugin-react-helmet": "^3.3.9",
+    "gatsby-plugin-robots-txt": "^1.5.3",
     "gatsby-plugin-sharp": "^2.6.17",
     "gatsby-plugin-sitemap": "^2.4.11",
     "gatsby-source-datocms": "^2.3.0",
