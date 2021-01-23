@@ -34,7 +34,7 @@ const Nav = class extends React.Component {
             <Link className="navigation-wrapper__link" onClick={this.toggleMenu} activeClassName="is-active" to="/telecommunications-utilities/"><span className="lg:block">Telecommunications</span> &amp; Utilities</Link>
           </li>
           <li className="navigation-wrapper__list-item">
-            <Link className="navigation-wrapper__link" onClick={this.toggleMenu} activeClassName="is-active" to="/led-lights-ev-chargers/"><span className="lg:block">LED Lights &amp;</span> EV Chargers</Link>
+            <Link className="navigation-wrapper__link" onClick={this.toggleMenu} activeClassName="is-active" to="/ev-chargers/"><span className="lg:block">EV</span> Chargers</Link>
           </li>
           <li className="navigation-wrapper__list-item">
             <Link className="navigation-wrapper__link" onClick={this.toggleMenu} activeClassName="is-active" to="/recent-projects/"><span className="lg:block">Recent</span> Projects</Link>
