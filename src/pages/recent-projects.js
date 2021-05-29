@@ -62,13 +62,13 @@ const ServicePage = ({ data }) => {
         <motion.div
           variants={item}
           transition="easeInOut"
-          className="container w-full -mt-8 md:flex-row md:flex"
+          className="container w-full -mt-8 md:flex-row md:flex md:flex-wrap"
         >
           {posts.edges.map((projectData, key) => (
             <Link
               key={key}
               to={"/recent-projects/" + projectData.node.slug}
-              className="flex p-1 md:w-1/2 recent-project-listing"
+              className="flex p-1 md:w-1/2 lg:w-1/3 recent-project-listing"
             >
               <span className="flex p-8 mb-4 text-white bg-gray-200 border-r-0 border-white border-solid shadow-lg recent-project-listing__number bg-gradient-b-green-green-dark font-display w-14 border-10">
                 <span className="m-auto">{key + 1}</span>
@@ -76,7 +76,7 @@ const ServicePage = ({ data }) => {
               <div className="relative flex-grow block mb-4 overflow-hidden bg-gray-200 border-white border-solid shadow-lg border-10">
                 <Img
                   fluid={projectData.node.heroImage.fluid}
-                  className="block object-cover w-full"
+                  className="block object-cover w-full h-full"
                 />
                 <div className="absolute top-0 bottom-0 left-0 right-0 z-30 flex flex-col items-start justify-center w-full h-full m-auto">
                   <h2 className="p-2 m-0 text-xl bg-white lg:text-3xl">
